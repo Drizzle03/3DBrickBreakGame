@@ -1,7 +1,7 @@
 # 3DBrickBreakGame
-Art Technology 과제 벽돌 깨기 게임 제작하기
+<h3>Art Technology 과제 벽돌 깨기 게임 제작 </h3>
 
-개발 현황
+<br>개발 현황
 
 <h3>2023.04.15</h3>
 - 시작 화면 추가
