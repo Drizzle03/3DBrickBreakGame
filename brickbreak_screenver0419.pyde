@@ -2,7 +2,7 @@
 game_state = "start" #( start - 초기화면 / game - 게임 화면 / end_clear, end_over - 게임 종료 화면)
 
 # 게임 라이프 설정
-life_num = 3
+life_num = 5
 life = life_num
 
 # 구 x, y, z 좌표 설정
