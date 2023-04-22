@@ -26,7 +26,7 @@ half_box_height = box_height / 2
 half_box_depth = box_depth / 2
 z_offset = 10
 
-brick_num = 2  # x축과 z축 방향으로 배치될 벽돌의 개수
+brick_num = 6  # x축과 z축 방향으로 배치될 벽돌의 개수
 brick_row = 2 # 벽돌 줄 개수
 
 
@@ -363,9 +363,19 @@ def check_collision_with_racket():
         and padY - racket_half_height <= sp_y <= padY + racket_half_height
         and padZ - racket_half_depth <= sp_z <= padZ + racket_half_depth):
         # 공이 라켓에 닿았다면, 반사 각도를 조정하고 공의 속도를 변경
-        sp_dx *= -1
+        # 공의 위치에 따라 튀는 방향을 다르게 설정
+        if sp_x < padX - box_width / 10:
+            sp_dx = -abs(sp_dx)
+        elif sp_x > padX + box_width / 10:
+            sp_dx = abs(sp_dx)
+    
+        if sp_z < padZ - box_depth / 10:
+            sp_dz = -abs(sp_dz)
+        elif sp_z > padZ + box_depth / 10:
+            sp_dz = abs(sp_dz)
+        # sp_dx *= -1
         sp_dy *= -1
-        sp_dz *= -1
+        # sp_dz *= -1
         
         
 # 게임 클리어 확인 함수 개선
